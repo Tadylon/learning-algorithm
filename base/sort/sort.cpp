@@ -1,15 +1,14 @@
 #include <iostream>
-using namespace std;
 #include <algorithm>
 #include <vector>
 
 void myPrint(int val)
 {
-	cout << val << " ";
+	std::cout << val << " ";
 }
 
 void test01() {
-	vector<int> v;
+	std::vector<int> v;
 	v.push_back(10);
 	v.push_back(30);
 	v.push_back(50);
@@ -21,12 +20,12 @@ void test01() {
 	//sort默认从小到大排序
 	sort(v.begin(), v.end());
 	for_each(v.begin(), v.end(), myPrint);
-	cout << endl;
+	std::cout << std::endl;
 
 	//从大到小排序
-	sort(v.begin(), v.end(), greater<int>());
+	sort(v.begin(), v.end(), std::greater<int>());
 	for_each(v.begin(), v.end(), myPrint);
-	cout << endl;
+	std::cout << std::endl;
 }
 
 int main() {

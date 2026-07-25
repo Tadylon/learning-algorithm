@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 #include <algorithm>
 #include <vector>
 
@@ -8,13 +7,13 @@ class myPrint
 public:
 	void operator()(int val)
 	{
-		cout << val << " ";
+		std::cout << val << " ";
 	}
 };
 
 void test01()
 {
-	vector<int> v;
+	std::vector<int> v;
 	v.push_back(20);
 	v.push_back(10);
 	v.push_back(30);
@@ -24,15 +23,15 @@ void test01()
 	v.push_back(20);
 	v.push_back(50);
     
-	cout << "before reverse : " << endl;
+	std::cout << "before reverse : " << std::endl;
 	for_each(v.begin(), v.end(), myPrint());
-	cout << endl;
+	std::cout << std::endl;
 
-	cout << "after reverse : " << endl;
+	std::cout << "after reverse : " << std::endl;
 
 	reverse(v.begin(), v.end());
 	for_each(v.begin(), v.end(), myPrint());
-	cout << endl;
+	std::cout << std::endl;
 }
 
 int main() {

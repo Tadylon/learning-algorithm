@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 #include <algorithm>
 #include <vector>
 
@@ -8,16 +7,16 @@ class myPrint
 public:
 	void operator()(int val)
 	{
-		cout << val << " ";
+		std::cout << val << " ";
 	}
 };
 
 void test01()
 {
-	vector<int> v1;
-	vector<int> v2;
-    //this is a vtarget vector
-    vector<int> vtarget;
+	std::vector<int> v1;
+	std::vector<int> v2;
+    //this is a vtarget std::vector
+    std::vector<int> vtarget;
 
     //add some number to this
 	for (int i = 0; i < 10 ; i++) 
@@ -26,11 +25,11 @@ void test01()
 		v2.push_back(i * 2);
 	}
 
-    //print this two vector
+    //print this two std::vector
     for_each(v1.begin(), v1.end(), myPrint());
-    cout << endl;
+    std::cout << std::endl;
     for_each(v2.begin(), v2.end(), myPrint());
-    cout << endl;
+    std::cout << std::endl;
 
 	//目标容器需要提前开辟空间
 	vtarget.resize(v1.size() + v2.size());
@@ -38,7 +37,7 @@ void test01()
 	merge(v1.begin(), v1.end(), v2.begin(), v2.end(), vtarget.begin());
 
 	for_each(vtarget.begin(), vtarget.end(), myPrint());
-	cout << endl;
+	std::cout << std::endl;
 }
 
 int main() {
