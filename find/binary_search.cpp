@@ -1,11 +1,11 @@
 #include <iostream>
-using namespace std;
+// using namespace std;
 #include <algorithm>
 #include <vector>
 
 void test01()
 {
-	vector<int>v;
+	std::vector<int>v;
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -15,11 +15,11 @@ void test01()
 	bool ret = binary_search(v.begin(), v.end(),2);
 	if (ret)
 	{
-		cout << "found it ! " << endl;
+		std::cout << "found it ! " << std::endl;
 	}
 	else
 	{
-		cout << "not found ! " << endl;
+		std::cout << "not found ! " << std::endl;
 	}
 }
 

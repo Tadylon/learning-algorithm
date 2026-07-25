@@ -1,55 +1,54 @@
 #include <iostream>
-using namespace std;
 #include <algorithm>
 #include <vector>
 #include <string>
 #include <iterator>
 // void test01() {
 
-// 	vector<int> v;
+// 	std::vector<int> v;
 // 	for (int i = 0; i < 10; i++) {
 // 		v.push_back(i + 1);
 // 	}
 // 	//查找容器中是否有 5 这个元素
-// 	vector<int>::iterator it = find(v.begin(), v.end(), 5);
+// 	std::vector<int>::iterator it = find(v.begin(), v.end(), 5);
 // 	if (it == v.end()) 
 // 	{
-// 		cout << "没有找到!" << endl;
+// 		std::cout << "没有找到!" << std::endl;
 // 	}
 // 	else 
 // 	{
-// 		cout << "找到:" << *it << endl;
+// 		std::cout << "找到:" << *it << std::endl;
 // 	}
 // }
 
 void find_number(){
-    vector<int> v;
+    std::vector<int> v;
     for (int i =0; i < 10; i++) {
         v.push_back(i);
     }
     //print the first number
-    cout << v.front() << endl;
+    std::cout << v.front() << std::endl;
 
-    vector<int>::iterator it = find(v.begin(), v.end(), 5);
+    std::vector<int>::iterator it = find(v.begin(), v.end(), 5);
 
     
     if (it == v.end()) {
-        cout << "not found this number" << endl;
+        std::cout << "not found this number" << std::endl;
 
     }
     else {
-        cout << "find it! " << endl;
+        std::cout << "find it! " << std::endl;
 
         // dont know what it means
         int index = distance(v.begin(), it);
-        cout << "This index of 5 is " << index << endl;
+        std::cout << "This index of 5 is " << index << std::endl;
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 class Person {
 public:
-	Person(string name, int age) 
+	Person(std::string name, int age) 
 	{
 		this->m_Name = name;
 		this->m_Age = age;
@@ -65,13 +64,13 @@ public:
 	}
 
 public:
-	string m_Name;
+	std::string m_Name;
 	int m_Age;
 };
 
 void test02() {
 
-	vector<Person> v;
+	std::vector<Person> v;
 
 	//创建数据
 	Person p1("aaa", 10);
@@ -84,15 +83,15 @@ void test02() {
 	v.push_back(p3);
 	v.push_back(p4);
 
-	vector<Person>::iterator it = find(v.begin(), v.end(), p2);
+	std::vector<Person>::iterator it = find(v.begin(), v.end(), p2);
 	if (it == v.end()) 
 	{
-		cout << "not found ! " << endl;
+		std::cout << "not found ! " << std::endl;
 	}
 	else 
 	{
-		cout << "find name : " << it->m_Name << endl;
-        cout << "find age :  " << it->m_Age << endl;
+		std::cout << "find name : " << it->m_Name << std::endl;
+        std::cout << "find age :  " << it->m_Age << std::endl;
 	}
 }
 

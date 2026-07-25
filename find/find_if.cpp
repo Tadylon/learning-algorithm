@@ -1,6 +1,4 @@
 #include <iostream>
-using namespace std;
-
 #include <algorithm>
 #include <vector>
 #include <string>
@@ -15,41 +13,41 @@ public:
 	}
 };
 
-void printVector(vector<int>& v){
-    cout << "the number in this iterator is : " << endl;
-    for (vector<int>::iterator test = v.begin(); test != v.end(); test++) {
-        cout << *test << "   ";
+void printvector(std::vector<int>& v){
+    std::cout << "the number in this iterator is : " << std::endl;
+    for (std::vector<int>::iterator test = v.begin(); test != v.end(); test++) {
+        std::cout << *test << "   ";
     }
 
 }
 
 void test01() {
 
-	vector<int> v;
+	std::vector<int> v;
 	for (int i = 0; i < 10; i++) {
 		v.push_back(i + 1);
 	}
-    printVector(v);
+    printvector(v);
 
-	vector<int>::iterator it = find_if(v.begin(), v.end(), GreaterFive());
+	std::vector<int>::iterator it = find_if(v.begin(), v.end(), GreaterFive());
 	if (it == v.end()) {
-		cout << "not found ! " << endl;
+		std::cout << "not found ! " << std::endl;
 	}
 	else {
-		cout << "the number is larger than 5 : " << *it << endl;
+		std::cout << "the number is larger than 5 : " << *it << std::endl;
 	}
 }
 
 //自定义数据类型
 class Person {
 public:
-	Person(string name, int age)
+	Person(std::string name, int age)
 	{
 		this->m_Name = name;
 		this->m_Age = age;
 	}
 public:
-	string m_Name;
+	std::string m_Name;
 	int m_Age;
 };
 
@@ -65,7 +63,7 @@ public:
 
 void test02() {
 
-	vector<Person> v;
+	std::vector<Person> v;
 
 	//创建数据
 	Person p1("aaa", 10);
@@ -78,15 +76,15 @@ void test02() {
 	v.push_back(p3);
 	v.push_back(p4);
 
-	vector<Person>::iterator it = find_if(v.begin(), v.end(), Greater20());
+	std::vector<Person>::iterator it = find_if(v.begin(), v.end(), Greater20());
     for (int i =0 ; i < v.size(); i++) {
         if (it == v.end())
         {
-            cout << "没有找到!" << endl;
+            std::cout << "没有找到!" << std::endl;
         }
         else
         {
-            cout << "找到姓名:" << it->m_Name << " 年龄: " << it->m_Age << endl;
+            std::cout << "找到姓名:" << it->m_Name << " 年龄: " << it->m_Age << std::endl;
         }
     }
 }

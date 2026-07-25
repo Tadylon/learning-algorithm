@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 #include <algorithm>
 #include <vector>
 
@@ -15,7 +14,7 @@ public:
 //内置数据类型
 void test01()
 {
-	vector<int> v;
+	std::vector<int> v;
 	v.push_back(1);
 	v.push_back(2);
 	v.push_back(4);
@@ -26,20 +25,20 @@ void test01()
 
 	int num = count_if(v.begin(), v.end(), Greater4());
 
-	cout << "the numbers of  " << num << endl;
+	std::cout << "the numbers of  " << num << std::endl;
 }
 
 //自定义数据类型
 class Person
 {
 public:
-	Person(string name, int age)
+	Person(std::string name, int age)
 	{
 		this->m_Name = name;
 		this->m_Age = age;
 	}
 
-	string m_Name;
+	std::string m_Name;
 	int m_Age;
 };
 
@@ -53,7 +52,7 @@ public:
 };
 void test02()
 {
-	vector<Person> v;
+	std::vector<Person> v;
 
 	Person p1("person 1", 35);
 	Person p2("person 2", 35);
@@ -68,7 +67,7 @@ void test02()
 	v.push_back(p5);
 
 	int num = count_if(v.begin(), v.end(), AgeLess35());
-	cout << "the age smaller than 35 are : " << num << endl;
+	std::cout << "the age smaller than 35 are : " << num << std::endl;
 }
 
 

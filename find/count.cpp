@@ -1,12 +1,11 @@
 #include <iostream>
-using namespace std;
 #include <algorithm>
 #include <vector>
 
 //内置数据类型
 void test01()
 {
-	vector<int> v;
+	std::vector<int> v;
 	v.push_back(1);
 	v.push_back(2);
 	v.push_back(4);
@@ -17,14 +16,14 @@ void test01()
 
 	int num = count(v.begin(), v.end(), 4);
 
-	cout << "4的个数为： " << num << endl;
+	std::cout << "4的个数为： " << num << std::endl;
 }
 
 //自定义数据类型
 class Person
 {
 public:
-	Person(string name, int age)
+	Person(std::string name, int age)
 	{
 		this->m_Name = name;
 		this->m_Age = age;
@@ -40,13 +39,13 @@ public:
 			return false;
 		}
 	}
-	string m_Name;
+	std::string m_Name;
 	int m_Age;
 };
 
 void test02()
 {
-	vector<Person> v;
+	std::vector<Person> v;
 
 	Person p1("first one ", 35);
 	Person p2("second one ", 35);
@@ -63,11 +62,11 @@ void test02()
     Person p("sixth one ",35);
 
 	int num = count(v.begin(), v.end(), p);
-    cout << "age of p : " << p.m_Age << endl;
-	cout << "num = " << num << endl;
+    std::cout << "age of p : " << p.m_Age << std::endl;
+	std::cout << "num = " << num << std::endl;
     v.push_back(p);
 	int num_2 = count(v.begin(), v.end(), p);
-	cout << "num = " << num_2 << endl;
+	std::cout << "num = " << num_2 << std::endl;
 
 }
 int main() {

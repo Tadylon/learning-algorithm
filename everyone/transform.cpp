@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+// using namespace std;
 #include<vector>
 #include<algorithm>
 
@@ -20,19 +20,19 @@ class MyPrint
 public:
 	void operator()(int val)
 	{
-		cout << val << " ";
+		std::cout << val << " ";
 	}
 };
 
 void test01()
 {
-	vector<int>v;
+	std::vector<int>v;
 	for (int i = 0; i < 10; i++)
 	{
 		v.push_back(i);
 	}
 
-	vector<int>vTarget; //目标容器
+	std::vector<int>vTarget; //目标容器
 
 	vTarget.resize(v.size()); // 目标容器需要提前开辟空间
 
