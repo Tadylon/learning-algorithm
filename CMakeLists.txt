@@ -8,7 +8,8 @@ add_executable(Algorithm
     # leetcode/array/the_max_multply.cpp
     # leetcode/dp/climb_stairs.cpp
     # leetcode/hash/two_num_add.cpp
-    leetcode/hash/string_divide.cpp
+    # leetcode/hash/string_divide.cpp
+    leetcode/double_pointer/three_num_sun.cpp
 )
 
 target_include_directories(Algorithm PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
