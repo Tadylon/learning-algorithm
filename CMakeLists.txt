@@ -9,7 +9,10 @@ add_executable(Algorithm
     # leetcode/dp/climb_stairs.cpp
     # leetcode/hash/two_num_add.cpp
     # leetcode/hash/string_divide.cpp
-    leetcode/double_pointer/three_num_sun.cpp
+    # leetcode/double_pointer/three_num_sun.cpp
+    # leetcode/array/maxsub.cpp
+
+    struct/graph/base.cpp
 )
 
 target_include_directories(Algorithm PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
